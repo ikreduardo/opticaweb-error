@@ -1,7 +1,7 @@
 <div class="container text-center">
     <div class="row">
         <div class="col-md-5 panel1">
-            <img class="mb-4 img" src="assets/img/log.png" alt="logo" />
+            <a [routerLink]="['/home']"><img class="mb-4 img" src="assets/img/log.png" alt="logo" /></a>
         </div>
         <div class="col-md-7 panel2">
             <div class="background text-center">
@@ -24,7 +24,7 @@
                     id="inputPassword"
                     placeholder="Password"
                   />
-                  <button type="submit" class="btn btn-outline-primary btn-block mb-2 btn1">
+                  <button type="submit" class="btn btn-outline-primary btn-block mb-2 btn1" [routerLink]="['/home']">
                     Ingresar
                   </button>
                   <a [routerLink]="['/register']">Registrate</a>
