@@ -5,10 +5,7 @@
         </div>
         <div class="col-md-7 panel2">
             <div class="background text-center">
-                <form
-                  class="form-signin animated fadeIn"
-                  autocomplete="off"
-                >
+                <form [formGroup]="loginForm "class="form-signin animated fadeIn"autocomplete="off">
                   <h1 class="h3 mb-3 font-weight-normal t1">Iniciar Sesión...</h1>
                   <label class="sr-only" for="inputEmail">Correo</label>
                   <input
@@ -16,6 +13,7 @@
                     class="form-control mb-2"
                     id="inputEmail"
                     placeholder="Correo"
+                    formControlName="email"
                   />
                   <label class="sr-only" for="inputPassword">Password</label>
                   <input
@@ -23,8 +21,9 @@
                     class="form-control mb-3"
                     id="inputPassword"
                     placeholder="Password"
+                    formControlName="password"
                   />
-                  <button type="submit" class="btn btn-outline-primary btn-block mb-2 btn1" [routerLink]="['/home']">
+                  <button type="submit" class="btn btn-outline-primary btn-block mb-2 btn1" (click)="login()" id="login">
                     Ingresar
                   </button>
                   <a [routerLink]="['/register']">Registrate</a>
