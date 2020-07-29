@@ -4,6 +4,7 @@ import { LoginComponent } from './components/auth/login/login.component';
 import { HomeComponent } from './components/main/home/home.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { ModalComponent } from './modal/modal.component';
+import { CustomerComponent } from './components/dashboard/customer/customer.component';
 
 const routes: Routes = [
   { path: '', component:LoginComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'modal', component: ModalComponent },
   { path: 'home', component: HomeComponent },
+   {path: 'customer', component: CustomerComponent},
   { path: '**', redirectTo: '/home' }
 ];
 

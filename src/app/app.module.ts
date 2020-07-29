@@ -10,6 +10,7 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { HomeComponent } from './components/main/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
+import { CustomerComponent } from './components/dashboard/customer/customer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ModalComponent } from './modal/modal.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ModalComponent
+    ModalComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
