@@ -6,12 +6,13 @@ import { RegisterComponent } from './components/auth/register/register.component
 import { ModalComponent } from './modal/modal.component';
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'modal', component: ModalComponent},
-  {path: 'home', component: HomeComponent},
-  {path: '**', redirectTo: '/home'}
+  { path: '', component:LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'modal', component: ModalComponent },
+  { path: 'home', component: HomeComponent },
+  { path: '**', redirectTo: '/home' }
 ];
 
 @NgModule({
