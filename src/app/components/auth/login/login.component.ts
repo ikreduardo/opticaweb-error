@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { IAuth } from 'src/app/models/auth';
+
 
 @Component({
   selector: 'app-login',
@@ -8,20 +12,27 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
+  auth: IAuth;
   loginForm: FormGroup;
-  constructor() { this.createForm(); }
+  constructor(private router: Router, private authSvc: AuthService) { this.createForm(); }
 
   createForm() {
     this.loginForm = new FormGroup({
       email: new FormControl('', Validators.compose([Validators.required])),
-      passowrd: new FormControl('', Validators.compose([Validators.required]))
+      password: new FormControl('', Validators.compose([Validators.required]))
     });
   }
   ngOnInit(): void {
   }
 
   login() {
-    
+    this.auth = {
+      email: this.loginForm.get('email').value,
+      password: this.loginForm.get('password').value
+    };
+    this.authSvc.login(this.auth).subscribe(res =>{
+      console.log(res);
+    });
   }
 
 }
