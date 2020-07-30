@@ -13,7 +13,7 @@ export class AuthService {
 
   login(auth: IAuth) {
     //return this.http.post('${this.endPoint}/login', auth);
-    return this.http.post<any>(`${environment.endpoint}/login`, auth);
+    return this.http.post<any>(`${this.endPoint}/login`, auth);
   }
 
   logout() {

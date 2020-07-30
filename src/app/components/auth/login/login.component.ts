@@ -31,7 +31,15 @@ export class LoginComponent implements OnInit {
       password: this.loginForm.get('password').value
     };
     this.authSvc.login(this.auth).subscribe(res =>{
-      console.log(res);
+      //console.log(res);
+      alert(res);
+      if(res) {
+        console.log('Bienvenido usuario!');
+        this.router.navigate(['/home']);
+      }
+      else {
+        console.log('Ocurrió un error');
+      }
     });
   }
 
