@@ -30,9 +30,8 @@ export class LoginComponent implements OnInit {
       email: this.loginForm.get('email').value,
       password: this.loginForm.get('password').value
     };
-    this.authSvc.login(this.auth).subscribe(res =>{
-      //console.log(res);
-      alert(res);
+    this.authSvc.login(this.auth).subscribe(res => {
+      console.log(res);
       if(res) {
         console.log('Bienvenido usuario!');
         this.router.navigate(['/home']);
