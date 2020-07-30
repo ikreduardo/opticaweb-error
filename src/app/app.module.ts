@@ -12,6 +12,7 @@ import { HomeComponent } from './components/main/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
 import { CustomerComponent } from './components/dashboard/customer/customer.component';
+import { AdminComponent } from './components/dashboard/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CustomerComponent } from './components/dashboard/customer/customer.comp
     RegisterComponent,
     HomeComponent,
     ModalComponent,
-    CustomerComponent
+    CustomerComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
