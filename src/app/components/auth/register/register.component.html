@@ -7,15 +7,56 @@
             <div class="background text-center">
                 <form
                   class="form-signin animated fadeIn"
-                  autocomplete="off">
+                  autocomplete="off"
+                  [formGroup]="registerForm"
+                  (ngSubmit)="register()"
+                  >
                   <a [routerLink]="['/home']"><img class="mb-4 img"  src="assets/img/log.png" alt="logo" /></a>
                   <h1 class="h3 mb-3 font-weight-normal">Ingresa tus Datos.</h1>
+                  <label class="sr-only" for="inputName">User Name</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    id="inputName"
+                    placeholder="Ingresa tu Nombre"
+                    formControlName="username"
+                    [class.is-invalid]= "usernameValidate"
+                  />
+                  <label class="sr-only" for="inputLastName">Last Name</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    id="inputLastName"
+                    placeholder="Ingresa tu Apellido"
+                    formControlName="last_name"
+                    [class.is-invalid]= "lastnameValidate"
+                  />
+                  <label class="sr-only" for="inputDirection">Direction</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2"
+                    id="inputDirection"
+                    placeholder="Ingresa tu Direccion"
+                    formControlName="direction"
+                    [class.is-invalid]= "directionValidate"
+                  />
+                  <label class="sr-only" for="inputPhone">Phone</label>
+                  <input
+                    type="tel"
+                    class="form-control mb-2"
+                    id="inputPhone"
+                    placeholder="Ingresa tu Telefono"
+                    formControlName="tel"
+                    [class.is-invalid]= "phoneValidate"
+                  />
                   <label class="sr-only" for="inputEmail">Email Address</label>
                   <input
                     type="email"
                     class="form-control mb-2"
                     id="inputEmail"
                     placeholder="Ingresa tu Correo"
+                    [class.is-invalid]= "emailValidate"
+                    formControlName="email"
                   />
                   <label class="sr-only" for="inputPassword">Password</label>
                   <input
@@ -23,6 +64,8 @@
                     class="form-control mb-3"
                     id="inputPassword"
                     placeholder="Ingresa tu Password"
+                    formControlName="password"
+                    [class.is-invalid]= "passwordValidate"
                   />
                   <label class="sr-only" for="inputPassword2">Confirm Password</label>
                   <input
@@ -30,8 +73,10 @@
                     class="form-control mb-3"
                     id="inputPassword2"
                     placeholder="Confirma tu Password"
+                    formControlName="password2"
+                    [class.is-invalid]= "passwordValidate2"
                   />
-                  <button type="submit" class="btn btn-lg btn-primary btn-block mb-2">
+                  <button type="submit" class="btn btn-lg btn-primary btn-block mb-2" [disabled]= "passwordValidate2">
                     Crear Cuenta
                   </button>
                   <a [routerLink]="['/login']">Ya cuento con una cuenta...</a>

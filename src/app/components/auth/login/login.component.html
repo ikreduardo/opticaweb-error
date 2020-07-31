@@ -14,6 +14,7 @@
                     id="inputEmail"
                     placeholder="Correo"
                     formControlName="email"
+                    [class.is-invalid]="emailValidate"
                   />
                   <label class="sr-only" for="inputPassword">Password</label>
                   <input
@@ -22,6 +23,7 @@
                     id="inputPassword"
                     placeholder="Password"
                     formControlName="password"
+                    [class.is-invalid]="passwordValidate"
                   />
                   <button type="submit" class="btn btn-outline-primary btn-block mb-2 btn1" (click)="login()" id="login">
                     Ingresar

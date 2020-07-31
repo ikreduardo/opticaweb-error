@@ -18,11 +18,23 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.loginForm = new FormGroup({
-      email: new FormControl('', Validators.compose([Validators.required])),
+      email: new FormControl('', Validators.compose([Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3}$')])),
       password: new FormControl('', Validators.compose([Validators.required]))
     });
   }
   ngOnInit(): void {
+  }
+
+  get emailValidate(){
+    return(
+      this.loginForm.get('email').invalid && this.loginForm.get('email').touched
+    )
+  }
+
+  get passwordValidate(){
+    return(
+      this.loginForm.get('password').invalid && this.loginForm.get('password').touched
+    )
   }
 
   login() {
