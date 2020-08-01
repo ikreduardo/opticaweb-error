@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+//import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/auth/login/login.component';
 import { RegisterComponent } from './components/auth/register/register.component';
@@ -27,7 +27,7 @@ import { CustomerComponent } from './components/dashboard/customer/customer.comp
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    MDBBootstrapModule.forRoot(),
+    //   MDBBootstrapModule.forRoot(),
     ReactiveFormsModule,
     HttpClientModule
   ],
