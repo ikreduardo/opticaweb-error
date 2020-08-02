@@ -14,7 +14,9 @@ export class LoginComponent implements OnInit {
 
   auth: IAuth;
   loginForm: FormGroup;
-  constructor(private router: Router, private authSvc: AuthService) { this.createForm(); }
+  constructor(private router: Router, private authService: AuthService) {
+     this.createForm();
+    }
 
   createForm() {
     this.loginForm = new FormGroup({
@@ -30,9 +32,20 @@ export class LoginComponent implements OnInit {
       email: this.loginForm.get('email').value,
       password: this.loginForm.get('password').value
     };
-    this.authSvc.login(this.auth).subscribe(res =>{
+    this.authService.login(this.auth).subscribe(res =>{
       console.log(res);
     });
   }
 
+  get emailValidate(){
+    return(
+      this.loginForm.get('email').invalid && this.loginForm.get('email').touched
+    );
+  }
+
+  get passwordValidate(){
+    return(
+      this.loginForm.get('password').invalid && this.loginForm.get('password').touched
+    );
+  }
 }
