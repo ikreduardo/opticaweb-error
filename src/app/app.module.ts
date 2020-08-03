@@ -12,7 +12,6 @@ import { HomeComponent } from './components/main/home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal/modal.component';
 import { CustomerComponent } from './components/dashboard/customer/customer.component';
-import { AdminComponent } from './components/dashboard/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -21,15 +20,14 @@ import { AdminComponent } from './components/dashboard/admin/admin.component';
     RegisterComponent,
     HomeComponent,
     ModalComponent,
-    CustomerComponent,
-    AdminComponent
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    //MDBBootstrapModule.forRoot(),
+    //   MDBBootstrapModule.forRoot(),
     ReactiveFormsModule,
     HttpClientModule
   ],
