@@ -32,8 +32,14 @@ export class LoginComponent implements OnInit {
       email: this.loginForm.get('email').value,
       password: this.loginForm.get('password').value
     };
-    this.authService.login(this.auth).subscribe(res =>{
-      console.log(res);
+    this.authService.login(this.auth).subscribe(res => {
+      if (res) {
+        console.log(res);
+        this.router.navigate(['/home']);
+      }
+      else {
+        console.log('Ocurrió un error');
+      }
     });
   }
 
