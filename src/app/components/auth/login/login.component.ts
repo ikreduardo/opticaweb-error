@@ -34,8 +34,28 @@ export class LoginComponent implements OnInit {
     };
     this.authService.login(this.auth).subscribe(res => {
       if (res) {
-        console.log(res);
-        this.router.navigate(['/home']);
+        var typeus = res.data.user[0].role_id
+        console.log(typeus);
+        switch(typeus) {
+            // Customer
+          case 1:
+            this.router.navigate(['/customer']);
+            console.log('customer')
+            break;
+            // Admin Opt
+          case 2:
+            this.router.navigate(['/subadmin']);
+            break;
+            // SuperAdmin
+          case 3:
+            console.log('SuperAdmin')
+            this.router.navigate(['/Admin']);
+            break;
+            // Driver
+          case 4:
+            this.router.navigate(['/driver']);
+            break;
+        }
       }
       else {
         console.log('Ocurrió un error');
