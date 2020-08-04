@@ -14,6 +14,7 @@ import { ModalComponent } from './modal/modal.component';
 import { CustomerComponent } from './components/dashboard/customer/customer.component';
 import { SubadminopComponent } from './components/dashboard/subadminop/subadminop.component';
 import { DriverComponent } from './components/dashboard/driver/driver.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { DriverComponent } from './components/dashboard/driver/driver.component'
     FormsModule,
     //   MDBBootstrapModule.forRoot(),
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
