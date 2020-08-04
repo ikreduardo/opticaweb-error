@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   auth: IAuth;
   loginForm: FormGroup;
+
   constructor(private router: Router, private authService: AuthService) {
      this.createForm();
     }
@@ -59,6 +60,21 @@ export class LoginComponent implements OnInit {
       }
       else {
         console.log('Ocurrió un error');
+      }
+    }, error => {
+      switch(error.status) {
+        case 401:
+          alert("Verifica tus credenciales")
+          break;
+        case 500:
+          alert("Error en el servidor")
+          break;
+        case 503:
+        case 502:
+             alert('Error de conexión')
+        break;
+        default:
+          alert("Error")
       }
     });
   }
