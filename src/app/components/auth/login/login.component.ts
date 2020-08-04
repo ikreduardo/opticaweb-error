@@ -3,7 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { IAuth } from 'src/app/models/auth';
-
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login',
@@ -64,7 +65,12 @@ export class LoginComponent implements OnInit {
     }, error => {
       switch(error.status) {
         case 401:
-          alert("Verifica tus credenciales")
+          Swal.fire({
+            title: 'Error!',
+            text: 'Verifica tus credenciales ! :(',
+            icon: 'error',
+            confirmButtonText: 'Ok'
+          })
           break;
         case 500:
           alert("Error en el servidor")
