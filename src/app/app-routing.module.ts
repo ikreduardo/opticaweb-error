@@ -8,15 +8,17 @@ import { AdminComponent } from './components/dashboard/admin/admin.component';
 import { CustomerComponent } from './components/dashboard/customer/customer.component';
 import { SubadminopComponent } from './components/dashboard/subadminop/subadminop.component';
 import { DriverComponent } from './components/dashboard/driver/driver.component'; 
+import { AuthGuard } from './components/auth/auth.guard'
 
 const routes: Routes = [
   { path: '', component:LoginComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },   
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'modal', component: ModalComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'Admin', component:AdminComponent },
+  { path: 'Admin', component:AdminComponent,
+    canActivate: [AuthGuard], },
   { path: 'subadmin', component: SubadminopComponent },
   { path: 'customer', component: CustomerComponent },
   { path: 'driver', component: DriverComponent },
