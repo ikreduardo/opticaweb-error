@@ -19,9 +19,12 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'Admin', component:AdminComponent,
     canActivate: [AuthGuard], },
-  { path: 'subadmin', component: SubadminopComponent },
-  { path: 'customer', component: CustomerComponent },
-  { path: 'driver', component: DriverComponent },
+  { path: 'subadmin', component: SubadminopComponent,
+    canActivate: [AuthGuard] },
+  { path: 'customer', component: CustomerComponent,
+    canActivate: [AuthGuard] },
+  { path: 'driver', component: DriverComponent,
+    canActivate: [AuthGuard] },
   { path: '**', redirectTo: '/home' }
 ];
 
