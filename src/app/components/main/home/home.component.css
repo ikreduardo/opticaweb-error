@@ -2,6 +2,15 @@
     margin-right: 25px;
 }
 
+.newbody{
+  background-image: url("/src/assets/img/log.png");
+  size: auto;  
+}
+.fir{
+  background-image: url("/src/assets/img/Clo.jpg");
+  background-size: auto;
+}
+
 /*MODAL COMPONENT*/
 .oscuro .modal-content {
     background-color: #021f2e;

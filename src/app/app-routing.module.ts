@@ -10,13 +10,13 @@ import { SubadminopComponent } from './components/dashboard/subadminop/subadmino
 import { DriverComponent } from './components/dashboard/driver/driver.component'; 
 
 const routes: Routes = [
-  { path: '', component:LoginComponent },
+  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'modal', component: ModalComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'Admin', component:AdminComponent },
+  { path: 'Admin', component: AdminComponent },
   { path: 'subadmin', component: SubadminopComponent },
   { path: 'customer', component: CustomerComponent },
   { path: 'driver', component: DriverComponent },

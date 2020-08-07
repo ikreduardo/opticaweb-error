@@ -3,16 +3,16 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <a class="navbar-brand" href="#">Hidden brand</a>
+      <a class="navbar-brand" href="#">InnoVision</a>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#"> Catalogo de Lentes <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/customer">Users<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/customer">¿Quienes somos?<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link disabled" href="#">Link</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
@@ -21,11 +21,51 @@
       <form class="form-inline my-2 my-lg-0">
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-primary search" type="submit">Buscar</button>
-        <button type="button" class="btn btn-outline-success" (click)="openSM(contenido)">Iniciar Sesión</button>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/register']">Registrarse</button>
+        <button type="button" class="btn btn-outline-success" [routerLink]="['/login']">Iniciar Sesión</button>
         
       </form>
     </div>
 </nav>
+
+<div class="row">
+  <div class="col-md-1">
+
+  </div>
+  <div class="col-md-10">
+    <div class="jumbotron fir">
+      <h1 class="display-4">Información COVID-19</h1>
+      <p class="lead">Ya tenemos más ópticas abiertas cumpliendo con el protocolo de seguridad ante COVID-19</p>
+      <hr class="my-4">
+      <p>Recuerda seguir los protocolos de seguridad marcados por las autoridades locales.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="http://https://coronavirus.gob.mx" role="button">Leer más...</a>
+      </p>
+    </div>    
+  </div>
+  <div class="col-md-1">
+    
+  </div>
+  
+</div> 
+
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/src/assets/img/hombre.png" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/src/assets/img/nuevo-desc.png" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="/src/assets/img/log.png" alt="Third slide">
+    </div>
+  </div>
+</div>
+
+
+
 
 <!--MODAL SESION-->
 <ng-template #contenido let-modal>
